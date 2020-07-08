@@ -2,7 +2,7 @@ package gratificações;
 
 public class Desempenho extends Gratificacao{
     @Override
-    public double calculaGratificacao() {
-        return getSalario() * 0.05;
+    public double calculaGratificacao( double salario) {
+        return salario * 0.05;
     }
 }

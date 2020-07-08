@@ -16,8 +16,8 @@ public class HoraExtra extends Gratificacao {
     }
 
     @Override
-    public double calculaGratificacao() {
-        return getSalario() * 0.001 * this.horas;
+    public double calculaGratificacao(double salario) {
+        return salario * 0.001 * this.horas;
     }
 
 

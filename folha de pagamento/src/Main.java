@@ -12,6 +12,11 @@ public class Main {
         memoria.adicionarFuncionario(funcionario);
         memoria.adicionarGerente(gerente);
 
+        Empregado empregado = memoria.buscarEmpregado("Gustavo");
+        empregado.exibirGratificacoes();
+
         memoria.exibirFolhadePagamento();
+
+        empregado.removerGratificacao(0);
     }
 }

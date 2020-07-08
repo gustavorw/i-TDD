@@ -1,6 +1,6 @@
 package cargos;
 
-public class Funcionario extends Trabalhador {
+public class Funcionario extends Empregado {
 
     public Funcionario(String nome) {
         setNome(nome);
@@ -10,5 +10,10 @@ public class Funcionario extends Trabalhador {
     @Override
     public void exibirInfor() {
         System.out.println(getNome() + " " + "         funcionário      " + getSalario() + "R$     " + quantidadeDeGratificoes() + "                 " + calcularValorTotalDasGratificoes() + "                 " + getValorVencimentoMensal());
+    }
+
+    @Override
+    public String toString() {
+        return "Funcionário";
     }
 }

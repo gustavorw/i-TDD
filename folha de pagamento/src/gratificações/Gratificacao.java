@@ -1,17 +1,8 @@
 package gratificações;
 
 public abstract class Gratificacao {
-    private double salario;
 
-    public void setSalario(double salario) {
-        this.salario = salario;
-    }
-
-    public double getSalario() {
-        return salario;
-    }
-
-    public double calculaGratificacao(){
+    public double calculaGratificacao(double salario){
         return 0.0;
     }
 

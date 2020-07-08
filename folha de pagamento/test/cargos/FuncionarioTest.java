@@ -14,6 +14,13 @@ public class FuncionarioTest {
     }
 
     @Test
+    public void testAdicionarDuasGratificacoes(){
+        funcionario.adicionarGratificacaoHoraExtra(10);
+        funcionario.adicionarGratificacaoDesempenho();
+        assertEquals(2, funcionario.quantidadeDeGratificoes());
+    }
+
+    @Test
     public void testUmaGratificacaoHoraExtra(){
         funcionario.adicionarGratificacaoHoraExtra(10);
         double valor = funcionario.calcularValorTotalDasGratificoes();

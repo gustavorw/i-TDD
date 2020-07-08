@@ -7,14 +7,14 @@ import gratificações.HoraExtra;
 import java.util.ArrayList;
 import java.util.List;
 
-abstract public class Trabalhador {
+abstract public class Empregado {
     private String nome;
     private double salario;
     private List<Gratificacao> gratificacoes;
     private double valorVencimentoMensal;
     private double valorDasGratificacoes;
 
-    Trabalhador(){
+    Empregado(){
         gratificacoes = new ArrayList<>();
         valorDasGratificacoes = 0.0;
         valorVencimentoMensal = 0.0;
@@ -56,13 +56,11 @@ abstract public class Trabalhador {
 
     public void adicionarGratificacaoHoraExtra(int horas) {
         HoraExtra horaExtra = new HoraExtra(horas);
-        horaExtra.setSalario(getSalario());
         gratificacoes.add(horaExtra);
     }
 
     public void adicionarGratificacaoDesempenho() {
         Desempenho desempenho = new Desempenho();
-        desempenho.setSalario(getSalario());
         gratificacoes.add(desempenho);
     }
 
@@ -70,9 +68,9 @@ abstract public class Trabalhador {
         double valorTotalGratificacoes = 0.0;
         for (Gratificacao gratificacao : gratificacoes) {
             if (gratificacao instanceof HoraExtra)
-                valorTotalGratificacoes += gratificacao.calculaGratificacao();
+                valorTotalGratificacoes += gratificacao.calculaGratificacao(getSalario());
             if (gratificacao instanceof Desempenho)
-                valorTotalGratificacoes += gratificacao.calculaGratificacao();
+                valorTotalGratificacoes += gratificacao.calculaGratificacao(getSalario());
         }
         setValorDasGratificacoes(valorTotalGratificacoes);
         return valorTotalGratificacoes;
@@ -82,5 +80,25 @@ abstract public class Trabalhador {
         return gratificacoes.size();
     }
 
+    public void exibirGratificacoes(){
+        int index = 0;
+        for(Gratificacao gratificacao: gratificacoes){
+            System.out.println(index +" "+ gratificacao.toString() + "  " +gratificacao.calculaGratificacao(getSalario()));
+        }
+    }
+
+    public void removerGratificacao(int index) {
+        try {
+            Gratificacao aux = gratificacoes.get(index);
+            gratificacoes.remove(aux);
+        }catch (IndexOutOfBoundsException e){
+            System.out.println("Não existe essa gratificação");
+        }
+
+    }
+
     abstract public void exibirInfor();
+
+
+
 }
