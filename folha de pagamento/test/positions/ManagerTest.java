@@ -17,15 +17,15 @@ public class ManagerTest {
 
     @Test
     public void testSalary(){
-        double salario = manager.getSalary();
-        assertTrue(4000.0 == salario);
+        double salary = manager.getSalary();
+        assertTrue(4000.0 == salary);
     }
 
     @Test
     public void testCalculateOvertimeGratification(){
         manager.addOvertimeBonus(10);
-        double valor = manager.calculateTotalGratificationsAmount();
-        assertTrue(valor == 40.0);
+        double value = manager.calculateTotalGratificationsAmount();
+        assertTrue(value == 40.0);
     }
 
     @Test
@@ -52,5 +52,23 @@ public class ManagerTest {
         assertTrue(valor == 0.0);
     }
 
+
+    @Test
+    public void testRemoveGratification(){
+        manager.addOvertimeBonus(10);
+        manager.addPerformanceBonus();
+        manager.addPerformanceBonus();
+        boolean status = manager.removeGratification(2);
+        assertTrue(status);
+    }
+
+    @Test
+    public void testRemoveGratificationError(){
+        manager.addOvertimeBonus(10);
+        manager.addPerformanceBonus();
+        manager.addPerformanceBonus();
+        boolean status = manager.removeGratification(10);
+        assertFalse(status);
+    }
 
 }

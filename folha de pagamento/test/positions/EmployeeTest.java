@@ -27,6 +27,23 @@ public class EmployeeTest {
         assertTrue(25.0 == valor);
     }
 
+    @Test
+    public void testRemoveGratification(){
+        employee.addOvertimeBonus(10);
+        employee.addPerformanceBonus();
+        employee.addPerformanceBonus();
+        boolean status = employee.removeGratification(2);
+        assertTrue(status);
+    }
+
+    @Test
+    public void testRemoveGratificationError(){
+        employee.addOvertimeBonus(10);
+        employee.addPerformanceBonus();
+        employee.addPerformanceBonus();
+        boolean status = employee.removeGratification(10);
+        assertFalse(status);
+    }
 
 
 }

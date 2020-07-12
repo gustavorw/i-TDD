@@ -25,7 +25,7 @@ public class Memory {
 
     public Worker searchWorker(String name) {
         for (Worker tr : workers) {
-            if (tr.getName().equals(name)) {
+            if (tr.getName().equals(name.toLowerCase())) {
                 return tr;
             }
         }
@@ -48,6 +48,19 @@ public class Memory {
             tr.displayInformation();
         }
 
+    }
+
+    public void menu(){
+        System.out.println("Bem vindos ao sistema de folha de pagamento");
+        System.out.println("1 - cadastrar Trabalhador");
+        System.out.println("2 - imprimir folha de pagamento");
+        System.out.println("3 - buscar Trabalhador");
+        System.out.println("0 - sair");
+    }
+
+    public void menuWorker(){
+        System.out.println("1 - adicionar Gerente");
+        System.out.println("2 - adicionar Funcionário");
     }
 
 }

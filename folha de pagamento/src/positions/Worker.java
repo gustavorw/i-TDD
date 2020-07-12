@@ -27,7 +27,7 @@ abstract public class Worker {
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name = name.toLowerCase();
     }
 
     public String getName() {
@@ -85,12 +85,14 @@ abstract public class Worker {
         }
     }
 
-    public void removeGratification(int index) {
+    public boolean removeGratification(int index) {
         try {
             Gratification aux = gratuities.get(index);
             gratuities.remove(aux);
+            return true;
         }catch (IndexOutOfBoundsException e){
             System.out.println("Não existe essa gratificação");
+            return false;
         }
 
     }
