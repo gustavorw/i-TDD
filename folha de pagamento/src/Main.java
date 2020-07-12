@@ -1,22 +1,21 @@
-import cargos.*;
+import positions.*;
 
 public class Main {
 
     public static void main(String[] args) {
-        Gerente gerente = new Gerente("Gustavo");
-        Funcionario funcionario = new Funcionario("João");
-        gerente.adicionarGratificacaoDesempenho();
-        gerente.adicionarGratificacaoHoraExtra(10);
+        Manager manager = new Manager("Gustavo");
+        Employee employee = new Employee("João");
+        manager.addPerformanceBonus();
+        manager.addOvertimeBonus(10);
 
-        Memoria memoria = new Memoria();
-        memoria.adicionarFuncionario(funcionario);
-        memoria.adicionarGerente(gerente);
+        Memory memory = new Memory();
+        memory.addEmployee(employee);
+        memory.addManager(manager);
 
-        Empregado empregado = memoria.buscarEmpregado("Gustavo");
-        empregado.exibirGratificacoes();
+        Worker worker = memory.searchWorker("Gustavo");
+        worker.displayGratuities();
 
-        memoria.exibirFolhadePagamento();
 
-        empregado.removerGratificacao(0);
+        worker.removeGratification(0);
     }
 }
