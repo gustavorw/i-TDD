@@ -8,7 +8,7 @@ public class Employee extends Worker {
     }
 
     @Override
-    public void displayInformation() {
+    public void showInformation() {
         System.out.println(getName() + " " + "         funcionário      " + getSalary() + "R$     " + amountOfGratuities() + "                 " + calculateTotalGratificationsAmount() + "                 " + getMonthlySalaryAmount());
     }
 

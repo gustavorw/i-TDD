@@ -45,7 +45,7 @@ public class Memory {
     public void showPayLeaf() {
         System.out.println("NOME        |     CARGO    | SALÁRIO | QT.GRATIFICAÇÕES | VALOR GRATIFICAÇÕES | V.MENSAL");
         for (Worker tr : workers) {
-            tr.displayInformation();
+            tr.showInformation();
         }
 
     }
@@ -59,8 +59,10 @@ public class Memory {
     }
 
     public void menuWorker(){
+        System.out.println("Página de Cadastro de usuário");
         System.out.println("1 - adicionar Gerente");
         System.out.println("2 - adicionar Funcionário");
+        System.out.println("0 - sair");
     }
 
 }

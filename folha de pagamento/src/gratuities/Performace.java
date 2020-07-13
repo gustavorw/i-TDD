@@ -5,4 +5,9 @@ public class Performace extends Gratification {
     public double calculatesBonus(double salary) {
         return salary * 0.05;
     }
+
+    @Override
+    public String toString() {
+        return "Desempenho";
+    }
 }

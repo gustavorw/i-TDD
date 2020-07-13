@@ -6,4 +6,8 @@ public abstract class Gratification {
         return 0.0;
     }
 
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }

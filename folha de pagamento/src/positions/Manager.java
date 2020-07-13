@@ -9,7 +9,7 @@ public class Manager extends Worker {
 
 
     @Override
-    public void displayInformation() {
+    public void showInformation() {
         System.out.println(getName() + " " + "      Gerente        " + getSalary() + "R$      " + amountOfGratuities() + "                  " + calculateTotalGratificationsAmount() + "                " + getMonthlySalaryAmount());
     }
 

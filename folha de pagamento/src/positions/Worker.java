@@ -78,11 +78,14 @@ abstract public class Worker {
         return gratuities.size();
     }
 
-    public void displayGratuities(){
+    public void showGratuities(){
         int index = 0;
+        System.out.println("");
+        System.out.println("Todas as gratificações");
         for(Gratification gratification : gratuities){
             System.out.println(index +" "+ gratification.toString() + "  " + gratification.calculatesBonus(getSalary()));
         }
+        System.out.println("");
     }
 
     public boolean removeGratification(int index) {
@@ -97,7 +100,7 @@ abstract public class Worker {
 
     }
 
-    abstract public void displayInformation();
+    abstract public void showInformation();
 
 
 

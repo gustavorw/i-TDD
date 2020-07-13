@@ -20,5 +20,8 @@ public class ExtraHour extends Gratification {
         return salary * 0.001 * this.hour;
     }
 
-
+    @Override
+    public String toString() {
+        return "Hora extra ";
+    }
 }
