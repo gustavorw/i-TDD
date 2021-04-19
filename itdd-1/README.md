@@ -1,2 +1,2 @@
 # itdd-1
-jogo da velha do curso iTDD
+Jogo da velha do curso iTDD
